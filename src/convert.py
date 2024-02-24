@@ -109,7 +109,7 @@ def convert_and_upload_supervisely_project(
                 species = sly.Tag(specie_meta)
                 l_tags.append(species)
 
-            if region_data.get("out of focus") is True:
+            if region_data.get("out of focus") == "true":
                 focus = sly.Tag(out_of_focus_meta)
                 l_tags.append(focus)
             exterior = []
