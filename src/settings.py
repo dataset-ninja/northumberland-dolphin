@@ -13,37 +13,44 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
-PROJECT_NAME_FULL: str = None
+PROJECT_NAME: str = "Northumberland Dolphin"
+PROJECT_NAME_FULL: str = "NDD20: The Northumberland Dolphin Dataset 2020"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-APPLICATIONS: List[Union[Industry, Domain, Research]] = None
-CATEGORY: Category = None
+LICENSE: License = License.CC_BY_NC_SA_4_0()
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [
+    Research.Environmental(),
+    Industry.Robotics(),
+]
+CATEGORY: Category = Category.Environmental(extra=[Category.Robotics(), Category.Biology()])
 
-CV_TASKS: List[CVTask] = None
-ANNOTATION_TYPES: List[AnnotationType] = None
+CV_TASKS: List[CVTask] = [CVTask.SemanticSegmentation(), CVTask.ObjectDetection()]
+ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.SemanticSegmentation()]
 
-RELEASE_DATE: Optional[str] = None  # e.g. "YYYY-MM-DD"
+RELEASE_DATE: Optional[str] = "2020-05-27"  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
     RELEASE_YEAR: int = None
 
-HOMEPAGE_URL: str = None
+HOMEPAGE_URL: str = (
+    "https://data.ncl.ac.uk/collections/The_Northumberland_Dolphin_Dataset_2020/4982342/1"
+)
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = None
+PREVIEW_IMAGE_ID: int = 14250929
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = None
+GITHUB_URL: str = "https://github.com/dataset-ninja/northumberland-dolphin"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
+DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = (
+    "https://data.ncl.ac.uk/articles/dataset/NDD20_zip/12357383?backTo=/collections/The_Northumberland_Dolphin_Dataset_2020/4982342"
+)
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
@@ -51,19 +58,41 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 
 # If you have more than the one paper, put the most relatable link as the first element of the list
 # Use dict key to specify name for a button
-PAPER: Optional[Union[str, List[str], Dict[str, str]]] = None
+PAPER: Optional[Union[str, List[str], Dict[str, str]]] = "https://arxiv.org/pdf/2005.13359"
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
-REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {"GitHub":"some_link_to_repo_if_exists"}
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
 
 CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = None
-AUTHORS_CONTACTS: Optional[List[str]] = None
+AUTHORS: Optional[List[str]] = [
+    "Cameron Trotter",
+    "Georgia Atkinson",
+    "Matt Sharpe",
+    "Kirsten Richardson",
+    "Stephen McGough",
+    "Nick Wright",
+    "Ben Burville",
+    "Per Berggren",
+]
+AUTHORS_CONTACTS: Optional[List[str]] = [
+    "c.trotter2@ncl.ac.uk",
+    "g.atkinson@ncl.ac.uk",
+    "m.j.sharpe@ncl.ac.uk",
+    "k.crane2@ncl.ac.uk",
+    "stephen.mcgough@ncl.ac.uk",
+    "nick.wright@ncl.ac.uk",
+    "ben.burville@ncl.ac.uk",
+    "per.berggren@ncl.ac.uk",
+]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "Newcastle University, UK"
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.ncl.ac.uk/"
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
-SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
+    "positions": ["above", "below"],
+    "dolphins species": ["tursiops truncatus", "lagenorhynchus albirostris"],
+    "__POSTTEXT__": "Additionally, some labels marked with dolphin ***id*** and ***out of focus*** tags",
+}
 TAGS: Optional[List[str]] = None
 
 
