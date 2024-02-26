@@ -10,11 +10,7 @@ Though challenging, cetacean researchers have manually identified individuals fo
 
 ## Data collection
 
-Data collection for NDD20 involved two distinct fieldwork endeavors. ***below*** water data gathering comprised 36 opportunistic surveys of the Farne Deeps, a glacial trench known for its rich biodiversity, located approximately 14-20 nautical miles offshore from Seahouses, UK. These surveys spanned from 2011 to 2018. On the other hand, ***above*** water data collection involved 27 surveys along a designated stretch of the Northumberland coast known as the Coquet to St. Mary's Marine Conservation Zone (MCZ).
-
-***above*** water photographs were captured using a DSLR camera from a small rigid inflatable boat during days characterized by fair weather and favorable sea conditions (typically less than four on the Beaufort scale). ***below*** water images in the dataset were extracted from high-definition video footage filmed with GoPro Hero 3 and GoPro Hero 4 cameras, operated by a diver under optimal sea conditions.
-
-Initially, ***above*** water surveys adhered to predetermined transect lines but later transitioned to more opportunistic approaches, leveraging shore-based volunteer observations shared on dedicated social media platforms.
+Data collection for NDD20 involved two distinct fieldwork endeavors. ***below*** water data gathering comprised 36 opportunistic surveys of the Farne Deeps, a glacial trench known for its rich biodiversity, located approximately 14-20 nautical miles offshore from Seahouses, UK. These surveys spanned from 2011 to 2018. On the other hand, ***above*** water data collection involved 27 surveys along a designated stretch of the Northumberland coast known as the Coquet to St. Mary's Marine Conservation Zone (MCZ). ***above*** water photographs were captured using a DSLR camera from a small rigid inflatable boat during days characterized by fair weather and favorable sea conditions (typically less than four on the Beaufort scale). ***below*** water images in the dataset were extracted from high-definition video footage filmed with GoPro Hero 3 and GoPro Hero 4 cameras, operated by a diver under optimal sea conditions. Initially, ***above*** water surveys adhered to predetermined transect lines but later transitioned to more opportunistic approaches, leveraging shore-based volunteer observations shared on dedicated social media platforms.
 
 ## Dataset description
 
@@ -27,7 +23,7 @@ To safeguard ongoing cetacean research endeavors, a pseudo-anonymization process
 
 NDD20 comprises a total of 2201 ***above*** water images, each accompanied by a JSON file. This JSON file provides detailed annotations for each image, including sets of (x,y) coordinates indicating regions of interest within the image. These coordinates are supplemented with attribute labels indicating various levels of difficulty in the recognition task. The first attribute level, labeled *dolphin*, delineates the area of the image containing any portion of a *dolphin* visible above the waterline at the time of capture. This attribute presents a standard, albeit challenging, instance segmentation task. Approximately 2900 masks are present in the above-water data, as some images feature multiple masks. The second attribute denotes the *dolphin*'s species, either BND or WBD, corresponding to ***tursiops truncatus*** and ***lagenorhynchus albirostris***, respectively. This aspect poses a fine-grained categorization challenge due to subtle inter-species differences. Although all above-water masks bear this label, there's an imbalance in class distribution, with 73% labeled as BND. The final attribute label signifies individual *dolphin* identifications, meticulously determined by cetacean researchers specializing in the Northumberland coastal area. Around 14% of masks contain an ***id*** attribute, with 44 distinct classes present. Once again, this distribution imbalance presents both a fine-grained and few-shot learning challenge.
 
-<img src="https://github.com/dataset-ninja/northumberland-dolphin/assets/120389559/b35f1741-1bb8-424f-99d2-c153ac62ceee" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/northumberland-dolphin/assets/120389559/b35f1741-1bb8-424f-99d2-c153ac62ceee" alt="image" width="600">
 
 <span style="font-size: smaller; font-style: italic;">The number of above water images per ID class.</span>
 
@@ -41,7 +37,7 @@ Identification based on individual ***id*** class labels poses the most daunting
 
 The 2201 ***below*** water images presented constitute a subset of a much broader image collection dating back to 2011. The labeling methodology for these images mirrors that of the ***above*** water images. The authors supply a JSON file containing coordinates for manually drawn mask annotations and multiple attribute labels. Similarly to the ***above*** water images, the first attribute level pertains to *dolphin*, representing areas within the image where any part of the object is visible. However, in contrast to the above-water images, all ***below*** water images feature at least one mask with an ***id*** attribute, encompassing 82 classes. Variations in the frequency of appearance among ***id*** class labels arise due to the data collection process involving free-roaming individuals, thereby presenting a genuine few-shot learning challenge reflective of real-world scenarios. Unlike the ***above*** water images, no species label is provided for the ***below*** water images, as all images depict ***lagenorhynchus albirostris***. Additionally, ***below*** water images are tagged with an ***out of focus*** flag, indicating whether the individual is deemed to be ***out of focus***.
 
-<img src="https://github.com/dataset-ninja/northumberland-dolphin/assets/120389559/30d620e0-e547-468b-967d-9d49f91f6386" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/northumberland-dolphin/assets/120389559/30d620e0-e547-468b-967d-9d49f91f6386" alt="image" width="600">
 
 <span style="font-size: smaller; font-style: italic;">The number of below water images per ID class.</span>
 
