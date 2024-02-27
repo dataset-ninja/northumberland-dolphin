@@ -1,6 +1,6 @@
 Dataset **NDD20** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/y/t/Yx/9ytaPSbFuIpQNBKnL8AKhYVt1CxQjmzf8eptnn75pF4q2Br2NB1pt3hfDOIciU14wHfdJkCL53ID5sW9LAuTRr52qwFQiGAGrNJBVnQLWiBINx5xhSHV7gXeVzj5.tar)
+ [Download](https://www.dropbox.com/scl/fi/s8krszoyxp3sjqpv3ea9k/ndd20-DatasetNinja.tar?rlkey=3f895utnsqbr4cqb9ileeefs9&dl=1)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
