@@ -13,7 +13,7 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "Northumberland Dolphin"
+PROJECT_NAME: str = "NDD20"
 PROJECT_NAME_FULL: str = "NDD20: The Northumberland Dolphin Dataset 2020"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
@@ -23,11 +23,14 @@ HIDE_DATASET = True  # set False when 100% sure about repo quality
 LICENSE: License = License.CC_BY_NC_SA_4_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
     Research.Environmental(),
-    Industry.Robotics(),
 ]
-CATEGORY: Category = Category.Environmental(extra=[Category.Robotics(), Category.Biology()])
+CATEGORY: Category = Category.Environmental(extra=[Category.Biology()])
 
-CV_TASKS: List[CVTask] = [CVTask.SemanticSegmentation(), CVTask.ObjectDetection()]
+CV_TASKS: List[CVTask] = [
+    CVTask.SemanticSegmentation(),
+    CVTask.ObjectDetection(),
+    CVTask.Identification(),
+]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.SemanticSegmentation()]
 
 RELEASE_DATE: Optional[str] = "2020-05-27"  # e.g. "YYYY-MM-DD"
@@ -91,7 +94,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.ncl.ac.uk/"
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
     "positions": ["above", "below"],
     "dolphins species": ["tursiops truncatus", "lagenorhynchus albirostris"],
-    "__POSTTEXT__": "Additionally, some labels marked with dolphin ***id*** and ***out of focus*** tags",
+    "__POSTTEXT__": "Additionally, some labels marked with dolphin ***id*** and ***out of focus*** tags, explore them in supervisely labeling tool",
 }
 TAGS: Optional[List[str]] = None
 
